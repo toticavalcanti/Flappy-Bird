@@ -7,6 +7,8 @@ This is a Node.js implementation of the popular game Flappy Bird.
 **Lançamento:** Maio de 2013  
 **Plataformas:** iOS, Android  
 
+![Game Screen](https://github.com/toticavalcanti/Flappy-Bird/blob/master/public/flappy-bird.png?raw=true)
+
 Flappy Bird is a mobile game developed by Vietnamese programmer Dong Nguyen, which went viral in 2014.<br> The objective is to guide a bird between green pipes without touching them, controlling the height of the flight with taps on the screen. Despite its simplicity, the game is extremely demanding, requiring precision and timing. <br>Its minimalist 2D design is reminiscent of classic 8-bit games. Flappy Bird has had a significant cultural impact, generating widespread discussion about addictive gameplay and related ethical issues. <br>It was removed from app stores by its creator due to concerns about player addiction, but it left a lasting legacy in the mobile gaming market.<br>
 The game is built with React for the frontend and uses HTML5 Canvas for rendering.
 
