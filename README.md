@@ -1,4 +1,4 @@
-# Flappy Bird Clone (English)
+# Flappy Bird Clone
 
 This is a Node.js implementation of the popular game Flappy Bird. The game is built with React for the frontend and uses HTML5 Canvas for rendering.
 
@@ -40,7 +40,7 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 
 ---
 
-# Clone do Flappy Bird (Português Brasileiro)
+# Clone do Flappy Bird
 
 Esta é uma implementação em Node.js do popular jogo Flappy Bird. O jogo é construído com React para o frontend e usa o Canvas HTML5 para renderização.
 
