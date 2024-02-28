@@ -1,68 +1,23 @@
-# Dependências
-node_modules/
-package-lock.json
-yarn.lock
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Arquivos de log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
 
-# Sistema Operacional
-.DS_Store
-Thumbs.db
+# testing
+/coverage
 
-# Diretórios de produção
+# production
 /build
-/dist
 
-# Chaves de deploy
-*.pem
-
-# Arquivos de configuração de ambiente
-.env
+# misc
+.DS_Store
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-# Diretórios de cache
-.cache
-.next
-.nuxt
-.out
-
-# Vários
-*.log
-*.csv
-*.dat
-*.out
-*.pid
-*.seed
-*.pid.lock
-
-# Diretórios de IDE/editor
-.vscode/
-.idea/
-*.sublime-workspace
-
-# Arquivos de bundle
-*.tgz
-*.tar.gz
-
-# Arquivos de teste
-/coverage
-/.nyc_output
-
-# Arquivos de produção
-*.min.js
-*.min.css
-
-# Pasta de documentação
-/out/
-/doc/
-
-# Arquivos específicos do projeto
-# Adicione aqui qualquer arquivo ou diretório específico do seu projeto que não deva ser versionado
-# Por exemplo, se você tiver arquivos de dados locais:
-# /local_data/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
