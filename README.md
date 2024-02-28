@@ -53,7 +53,7 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 # Flappy Bird
 
 Esta é uma implementação Node.js do popular jogo Flappy Bird.
-## Pássaro Flappy
+## Flappy Bird
 
 **Desenvolvedor:** Dong Nguyen / .GEARS Studios
 **Lançamento:** maio de 2013
