@@ -18,6 +18,9 @@ COPY . .
 # Remova o package-lock.json existente (opcional, dependendo da sua estratégia)
 # RUN rm -f package-lock.json
 
+RUN npm install -g npm@latest
+RUN npm cache clean --force
+
 # Instale as dependências do projeto, regenerando o package-lock.json
 RUN npm install --loglevel verbose
 
