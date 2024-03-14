@@ -13,6 +13,7 @@ COPY package*.json ./
 # Clean npm cache to avoid any cached packages interfering
 RUN npm install -g npm@latest && \
     npm cache clean --force && \
+    rm -f package-lock.json && \
     npm install --omit=dev
 
 # Now, copy the rest of the application files
