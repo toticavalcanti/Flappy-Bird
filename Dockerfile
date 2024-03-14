@@ -6,7 +6,7 @@ WORKDIR /App
 EXPOSE 3000
 
 # Copiando os arquivos de definição de dependências
-COPY package.json ./
+COPY package*.json ./
 
 # Instalando dependências. As ferramentas são necessárias para compilação de pacotes nativos.
 RUN npm ci --omit=dev && \
