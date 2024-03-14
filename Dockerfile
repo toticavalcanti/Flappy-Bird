@@ -2,30 +2,28 @@ FROM node:18-alpine
 
 WORKDIR /App
 
-# Expondo a porta 3000 para a aplicação
+# Expose port 3000 for the application
 EXPOSE 3000
 
-# Copiando os arquivos de definição de dependências
+# Copy the package.json and package-lock.json (if available)
 COPY package*.json ./
 
-# Instalando dependências. As ferramentas são necessárias para compilação de pacotes nativos.
-RUN npm ci --omit=dev && \
-    apk add --no-cache python3 make g++
-
-# Copiando o restante dos arquivos do projeto
-COPY . .
-
-# Remova o package-lock.json existente (opcional, dependendo da sua estratégia)
-# RUN rm -f package-lock.json
-
+# Install the latest version of npm to ensure consistency with package-lock.json handling
 RUN npm install -g npm@latest
+
+# Clean npm cache to avoid any cached packages interfering
 RUN npm cache clean --force
 
-# Instale as dependências do projeto, regenerando o package-lock.json
-RUN npm install --loglevel verbose
+# Install project dependencies, ensuring to avoid installing devDependencies
+# Note: We directly install dependencies instead of using `npm ci` here to bypass potential issues
+# with package-lock.json discrepancies and to ensure that a fresh package-lock.json can be generated if needed
+RUN npm install --only=production --loglevel verbose
 
-# Construindo a aplicação
+# Now, copy the rest of the application files
+COPY . .
+
+# Build the application (if your application needs a build step)
 RUN npm run build
 
-# Comando para iniciar a aplicação
+# Command to start the application
 CMD ["npm", "start"]
