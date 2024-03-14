@@ -8,9 +8,10 @@ EXPOSE 3000
 # Copy the package.json and package-lock.json (if available)
 COPY package*.json ./
 
-# Install the latest version of npm to ensure consistency with package-lock.json handling
-# Then, install project dependencies, avoiding installing devDependencies
-# Clean npm cache to avoid any cached packages interfering
+# Install the latest version of npm to ensure consistency with package-lock.json handling,
+# clean npm cache to avoid any cached packages interfering,
+# remove the package-lock.json if it exists, and
+# install only the production dependencies.
 RUN npm install -g npm@latest && \
     npm cache clean --force && \
     rm -f package-lock.json && \
