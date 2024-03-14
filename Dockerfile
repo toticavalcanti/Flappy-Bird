@@ -9,7 +9,7 @@ EXPOSE 3000
 COPY package*.json ./
 
 # Instalando dependências. As ferramentas são necessárias para compilação de pacotes nativos.
-RUN npm ci --only=production && \
+RUN npm ci --omit=dev && \
     apk add --no-cache python3 make g++
 
 # Copiando o restante dos arquivos do projeto
