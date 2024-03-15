@@ -17,9 +17,6 @@ RUN npm install -g npm@latest && \
     rm -f package-lock.json && \
     npm install --omit=dev
 
-# Clean up the NODE_OPTIONS environment variable if not needed afterwards
-# ENV NODE_OPTIONS=
-
 # Now, copy the rest of the application files
 COPY . .
 
