@@ -12,7 +12,7 @@ COPY package*.json ./
 ENV NODE_OPTIONS="--max-old-space-size=4096"
 
 # Install production dependencies with npm ci for consistency
-RUN npm ci --omit=dev --force
+RUN npm ci --omit=dev
 
 # Now, copy the rest of the application files
 COPY . .
