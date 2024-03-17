@@ -8,14 +8,11 @@ EXPOSE 3000
 # Copy the package.json and package-lock.json (if available)
 COPY package*.json ./
 
-# Set the Node.js heap size limit to a higher value
+# Set the Node.js heap size limit to a higher value (if needed)
 ENV NODE_OPTIONS="--max-old-space-size=4096"
 
-# Install the latest version of npm, clean npm cache, remove package-lock.json, and install production dependencies
-RUN npm install -g npm@latest && \
-    npm cache clean --force && \
-    rm -f package-lock.json && \
-    npm install --omit=dev
+# Install production dependencies with npm ci for consistency
+RUN npm ci --omit=dev
 
 # Now, copy the rest of the application files
 COPY . .
