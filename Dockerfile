@@ -1,24 +1,20 @@
+# Usa uma imagem do Node.js
 FROM node:18-alpine
 
-WORKDIR /App
+# Define o diretório de trabalho no container
+WORKDIR /app
 
-# Expose port 3000 for the application
-EXPOSE 3000
+# Se você tiver um .env ou outros arquivos de configuração para copiar, faça isso aqui
+# COPY .env ./
 
-# Copy the package.json and package-lock.json (if available)
-COPY package*.json ./
+# Copia a pasta build do seu projeto local para o container
+COPY ./build/ ./
 
-# Set the Node.js heap size limit to a higher value (if needed)
-ENV NODE_OPTIONS="--max-old-space-size=4096"
+# Instala o pacote serve globalmente no container
+RUN npm install -g serve
 
-# Install production dependencies with npm ci for consistency
-RUN npm install --omit=dev
+# Expõe a porta que o serve usará para servir o aplicativo
+EXPOSE 5000
 
-# Now, copy the rest of the application files
-COPY . .
-
-# Build the application (if your application needs a build step)
-RUN npm run build
-
-# Command to start the application
-CMD ["npm", "start"]
+# Define o comando para iniciar o aplicativo usando serve
+CMD ["serve", "-s", ".", "-l", "5000"]
